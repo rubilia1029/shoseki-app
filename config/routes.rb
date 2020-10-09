@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "homes#index"
   resources :homes, only: :index
   resources :books do
-    resources :comments, only: [:create, :destroy]
+    resources :comments
   end  
 end

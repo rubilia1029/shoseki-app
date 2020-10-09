@@ -18,11 +18,12 @@
         </li>
     </ul>
     <hr>
-    <%# <% if user_signed_in? %>
+    <% if user_signed_in? %>
         <div class="comment-create">
             <h3 class="text-left">レビューを投稿する</h3>
             <%= render partial: 'comments/form', locals: { comment: @comment, book: @book } %>
         </div>
-    <%# <% end %>
+    <% end %>
+    <%=link_to 'もどる',books_path, class:"back-btn" %>
 </div>
 </div>
