@@ -61,7 +61,6 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
 gem 'jquery-rails'
-gem 'bootstrap'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'uglifier'
