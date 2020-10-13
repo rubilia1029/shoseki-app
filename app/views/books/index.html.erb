@@ -2,16 +2,16 @@
 <div class='main'>
   <%=link_to "本の投稿", new_book_path%>
   
-  <div class='item-contents'>
+  <div class='main-contents'>
     
-    <ul class='item-lists'>
+    <ul class='book-lists'>
        <% if @books.present?%>
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
           <% @books.each do |book|%>
-         <li class='list'>
+         <li class='book'>
           <%= link_to book_path(book.id) do %>
           <div class='item-img-content'>
-            <%= image_tag book.image, class: "item-img" %>
+            <%= image_tag book.image, class: "picture" %>
   
           </div>
           <div class='item-info'>
