@@ -71,8 +71,13 @@ a {
 /* FURIMAが選ばれる3つの理由部分 */
 
 .main-contents {
-  width: 80%;
-  margin: 0 auto;
+  text-align: left;
+  float: none;
+  width: 980px;
+  border-style: none;
+  padding: 20px 0px;
+  margin-right: auto;
+  margin-left : auto;
   background-color: white;
 }
 .ranking_title {
