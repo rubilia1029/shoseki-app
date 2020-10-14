@@ -1,3 +1,2 @@
-//= require jquery3
-//= require popper
+//= require jquery
 //= require_tree .
