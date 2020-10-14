@@ -3,7 +3,7 @@
 }
 
 .top-page-header {
-  width: 100vw;
+  width: 980px;
   padding: 2vh 15vw;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 100%;
+  width: 980px;
   padding: 1vh 0;
 }
 
