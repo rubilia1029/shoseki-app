@@ -1,12 +1,16 @@
-<div class="item-show">
+<div class="book-show">
   
-  <div class="item-box">
-    <h2 class="name">
-      <%= @book.name %>
-    </h2>
-
-    <div class='item-img-content'>
+  <div class="left-contain">
+    <div class='book-img-content'>
       <%= image_tag @book.image ,class:"item-box-img" %>
+    </div>
+    <div class='right-contain'>
+      <div class="name">
+        <%= @book.name %>
+      </div>
+      <div class='author'>
+        <%= @book.author%>
+      </div>
     </div>
     <div class="row">
     <ul>
@@ -28,5 +32,5 @@
         </div>
     <% end %>
     <%=link_to 'もどる',books_path, class:"back-btn" %>
-</div>
+  </div>
 </div>
