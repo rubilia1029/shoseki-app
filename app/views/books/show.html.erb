@@ -1,9 +1,9 @@
-<div class="book-show">
-  
+<div class="contain">
   <div class="left-contain">
-    <div class='book-img-content'>
+    <div class='book-img-content2'>
       <%= image_tag @book.image ,class:"item-box-img" %>
     </div>
+  </div>  
     <div class='right-contain'>
       <div class="name">
         <%= @book.name %>
@@ -11,15 +11,17 @@
       <div class='author'>
         <%= @book.author%>
       </div>
+      <div id="favorites_buttons_<%= @book.id %>">
+        <%= render partial: 'favorites/favorite', locals: { book: @book} %>
+      </div>
     </div>
-    <div class="row">
+</div>    
+  <div class="row">
     <ul>
         <li class="comment-create">
             <h3 class="text-left title">レビュー</h3>
         </li>
-        <div id="favorites_buttons_<%= @book.id %>">
-             <%= render partial: 'favorites/favorite', locals: { book: @book} %>
-          </div>
+        
         <li id="comments_area">
             <%= render partial: 'comments/index', locals: { comments: @comments } %>
         </li>
@@ -33,4 +35,3 @@
     <% end %>
     <%=link_to 'もどる',books_path, class:"back-btn" %>
   </div>
-</div>

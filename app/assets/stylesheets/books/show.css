@@ -1,0 +1,22 @@
+
+
+.contain {
+  display: flex;
+  width:550px;
+  margin-right: auto;
+  margin-left : auto;
+}
+
+.book-img-content2 {
+  object-fit: cover;
+  width: 235px;
+}
+
+.right-contain {
+  width: 100%;
+  text-align: center;
+}
+
+.row {
+  text-align: center;
+}
