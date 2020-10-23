@@ -23,6 +23,16 @@ class BooksController < ApplicationController
     @comments = @book.comments.order(created_at: :DESC)
   end
 
+  def destroy
+    book = Book.find(params[:id])
+    if book.destroy
+      redirect_to books_path
+    else
+      redirect_to book_path
+    end
+  end
+
+
   private
 
   def book_params
