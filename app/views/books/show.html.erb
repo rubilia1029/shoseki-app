@@ -4,7 +4,7 @@
       <%= image_tag @book.image ,class:"item-box-img" %>
     </div>
   </div>  
-    <div class='right-contain'>
+  <div class='right-contain'>
       <div class="name">
         <%= @book.name %>
       </div>
@@ -14,7 +14,13 @@
       <div id="favorites_buttons_<%= @book.id %>">
         <%= render partial: 'favorites/favorite', locals: { book: @book} %>
       </div>
-    </div>
+      <% if user_signed_in? && current_user.id == @book.user_id%>
+    <div class='book-destroy'>
+      <%= link_to '削除', book_path(@book.id), method: :delete %>
+    </div>  
+    <% end %>
+  </div>
+    
 </div>    
   <div class="row">
     <ul>
