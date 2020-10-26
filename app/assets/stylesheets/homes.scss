@@ -1,6 +1,7 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -8,6 +9,7 @@ img {
 .wrap {
   overflow: hidden;
 }
+
 body {
 	margin: 0px;
 	padding: 0px;	
@@ -17,6 +19,7 @@ body {
 	background: #d5ccb4;
   -webkit-text-size-adjust: none;
 }
+
 a {
   text-decoration: none;
   color: black;
@@ -26,7 +29,7 @@ a {
   background: #f8f8f8;
 }
 
-/* 画面上部の「人生を変えるフリマアプリ」帯部分 */
+
 .title-contents {
   width: 100vw;
   background-image: image-url('R_ALICE_1024.jpg');
