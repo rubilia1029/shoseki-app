@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :move_to_new, except: [:index, :show]
+  
   def index
     @books = Book.all.order('created_at DESC')
   end  
@@ -37,5 +39,9 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:name, :author, :category_id, :image, :user_id).merge(user_id: current_user.id)
-  end  
+  end
+
+  def move_to_new
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 end
