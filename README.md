@@ -28,6 +28,7 @@ Things you may want to cover:
 このアプリケーションでは様々な本の情報を得られることができ、また読んだ本の書評などを書き込むことができる。
 
 # URL
+本番環境: http://18.177.54.3/
 
 # テスト用アカウント
 mail:aiai@yahoo.co.jp
