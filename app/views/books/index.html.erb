@@ -4,6 +4,7 @@
     <%=link_to "本の投稿", new_book_path%>
   </div>
   <div class='main-right'>
+    <a>お気に入りランキング</a>
     <div class ='book-fav-ranking'>
       <% if @book_ranking.present?%>
         <% @book_ranking.each.with_index(1) do |book,i|%>
@@ -21,6 +22,7 @@
         <% end %>  
       <% end %>
     </div>
+    投稿一覧
     <ul class='book-lists'>
       <% if @books.present?%>
         <% @books.each do |book|%>
