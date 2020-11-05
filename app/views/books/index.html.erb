@@ -4,39 +4,47 @@
     <%=link_to "本の投稿", new_book_path%>
   </div>
   <div class='main-right'>
+    <div class ='book-fav-ranking'>
+      <% if @book_ranking.present?%>
+        <% @book_ranking.each.with_index(1) do |book,i|%>
+          <li class='book'>
+            <div class ='book-rank'>
+              <%=i%>位
+            </div>
+            <div class='book-img-content'>
+                <%= link_to image_tag(book.image),book_path(book.id) %>
+            </div>
+            <div class='title'>
+                  <%=link_to book.name,book_path(book.id) %>
+            </div>
+          </li>
+        <% end %>  
+      <% end %>
+    </div>
     <ul class='book-lists'>
       <% if @books.present?%>
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
         <% @books.each do |book|%>
-        <li class='book'>
-          <div class='item-info'>
-            <div class='book-img-content'>
-              <%= link_to image_tag(book.image),book_path(book.id) %>
-            </div>
-            <div class='info-right'>
-              <div class='title'>
-                <%=link_to book.name,book_path(book.id) %>
+          <li class='book'>
+            <div class='item-info'>
+              <div class='book-img-content'>
+                <%= link_to image_tag(book.image),book_path(book.id) %>
               </div>
-              <div class='author'>
-                <span>著者：<%= book.author%></span>
+              <div class='info-right'>
+                <div class='title'>
+                  <%=link_to book.name,book_path(book.id) %>
+                </div>
+                <div class='author'>
+                  <span>著者：<%= book.author%></span>
+                </div>
+                <div class='genre'>
+                  <span>ジャンル：<%=book.category.name %>
+                </div>  
               </div>
-              <div class='genre'>
-                <span>ジャンル：<%=book.category.name %>
-              </div>  
             </div>
-          </div>
-          
-        </li>
-        
-        
+          </li>
         <% end %> 
-        
-    <% else %>
-        
-    <% end %>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# /商品がない場合のダミー %>
+      <% end %>
+      
     </ul>
   </div>
-<%# /商品一覧 %>
 </div>

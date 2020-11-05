@@ -19,6 +19,13 @@
   width: 700px;
 }
 
+.book-fav-ranking{
+  display: flex;
+}
+
+.book-rank{
+  justify-content: center;
+}
 .book{
   background-color: white;
   width: 100%;
