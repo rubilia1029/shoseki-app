@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :books do
     resources :comments
     resource :favorites, only: [:create, :destroy]
+    get :search, on: :collection
   end  
 end
