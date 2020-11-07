@@ -37,6 +37,14 @@ class BooksController < ApplicationController
     end
   end
 
+  def search
+    if params[:name].present?
+      @books = Book.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @books = book.none
+    end
+  end
+
 
   private
 
