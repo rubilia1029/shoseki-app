@@ -6,6 +6,7 @@ class BooksController < ApplicationController
     book_fav_count = Book.joins(:favorites).group(:book_id).count
     book_fav_ids = Hash[book_fav_count.sort_by{ |_, v| -v }].keys
     @book_ranking = Book.where(id:book_fav_ids).limit(5)
+    @books = Book.all.page(params[:page]).per(5)
   end  
 
   def new
