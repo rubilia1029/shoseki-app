@@ -29,6 +29,8 @@ Things you may want to cover:
 
 # URL
 本番環境: http://18.177.54.3/
+ID: admin
+Pass: 2222
 
 # テスト用アカウント
 mail:aiai@yahoo.co.jp
