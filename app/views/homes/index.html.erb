@@ -9,6 +9,7 @@
   </div>
   <div class='main-contents'>
     <h2 class= 'ranking_title'>週間ランキング</h2>
+    <%= @date.ago(6.days).strftime("%m月%d日")%>〜<%= @date.strftime("%m月%d日")%>
 
     <ul class="ranking_box"> 
       <% @books.each do |book| %>
@@ -17,15 +18,17 @@
           <%= book[:rank] %>位
         </div>  
         <div class = "photo_box">
-          <%= image_tag book[:photo_url] %>
+          <%= link_to image_tag(book[:photo_url]), book[:url]%>
         </div>
         <div class="title">
-          <%= book[:title] %>
+          <%= link_to book[:title].truncate(20), book[:url] %>
         </div>
+        
       </li>
       <% end %>
       </ul>
     <h2 class= 'ranking_title'>月間ランキング</h2>
+    <%= @date.ago(30.days).strftime("%m月%d日")%>〜<%= @date.strftime("%m月%d日")%>
     <ul class="ranking_box"> 
     <% @books_m.each do |book| %>
       <li class= "rank">
@@ -36,7 +39,7 @@
           <%= image_tag book[:photo_url] %>
         </div>
         <div class="title">
-          <%= book[:title] %>
+          <%= book[:title].truncate(20) %>
         </div>
       </li>  
       <% end %> 

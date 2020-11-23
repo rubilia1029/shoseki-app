@@ -23,10 +23,14 @@ class HomesController < ApplicationController
           photo = doc.xpath(ranking_path_photo).css("img")[0][:src]
           photo.slice!(0,2)
           photo_url = "https://www.kinokuniya.co.jp/" + photo
-          
+
+          ranking_path_id = "/html/body/div[1]/div[3]/div[2]/div[4]/ol/li[" + num.to_s + "]/p[1]/a"
+          idurl = doc.xpath(ranking_path_id).css("a")[0][:href]
+
           book[:title] = title
           book[:photo_url] = photo_url
           book[:rank] = num
+          book[:url] = idurl
           @books << book
         end
       end
@@ -59,5 +63,7 @@ class HomesController < ApplicationController
         
       end
     end
+
+    @date = DateTime.now
   end  
 end
