@@ -18,6 +18,9 @@
             <div class='title'>
                   <%=link_to book.name,book_path(book.id) %>
             </div>
+            <div id="favorites_buttons_<%= book.id %>">
+              <%= render partial: 'favorites/favorite', locals: { book: book} %>
+            </div>
           </li>
         <% end %>  
       <% end %>
